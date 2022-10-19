@@ -1,6 +1,6 @@
 package JVM对象创建以及内存分配;
 
-import org.openjdk.jol.info.ClassLayout;
+
 
 /**
  * 计算对象大小
@@ -8,16 +8,16 @@ import org.openjdk.jol.info.ClassLayout;
 public class JOLSample {
 
     public static void main(String[] args) {
-        ClassLayout layout = ClassLayout.parseInstance(new Object());
-        System.out.println(layout.toPrintable());
-
-        System.out.println();
-        ClassLayout layout1 = ClassLayout.parseInstance(new int[]{});
-        System.out.println(layout1.toPrintable());
-
-        System.out.println();
-        ClassLayout layout2 = ClassLayout.parseInstance(new A());
-        System.out.println(layout2.toPrintable());
+//        ClassLayout layout = ClassLayout.parseInstance(new Object());
+//        System.out.println(layout.toPrintable());
+//
+//        System.out.println();
+//        ClassLayout layout1 = ClassLayout.parseInstance(new int[]{});
+//        System.out.println(layout1.toPrintable());
+//
+//        System.out.println();
+//        ClassLayout layout2 = ClassLayout.parseInstance(new A());
+//        System.out.println(layout2.toPrintable());
     }
 
     // -XX:+UseCompressedOops           默认开启的压缩所有指针

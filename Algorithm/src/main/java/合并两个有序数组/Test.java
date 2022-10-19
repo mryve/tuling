@@ -13,7 +13,7 @@ public class Test {
         int[] num2 = new int[]{2,5,6};
         int m = 3;
         int n = 3;
-        System.out.println(Arrays.toString(merge(num1, m, num2, n)));
+        System.out.println(Arrays.toString(merge2(num1, m, num2, n)));
     }
 
     /**
@@ -42,4 +42,21 @@ public class Test {
         return num1;
     }
 
+    public static int[] merge2(int[] num1, int m, int[] num2, int n) {
+        int k = m + n;
+        int num1Index = m - 1;
+        int num2Index = n - 1;
+        for (int i = k - 1; i >= 0; i--) {
+            if (num1Index < 0) {
+                num1[i] = num2[num2Index--];
+            } else if (num2Index < 0) {
+                num1[i] = num1[num1Index--];
+            } else if (num1[num1Index] < num2[num2Index]) {
+                num1[i] = num2[num2Index--];
+            } else {
+                num1[i] = num1[num1Index--];
+            }
+        }
+        return num1;
+    }
 }

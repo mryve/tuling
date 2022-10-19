@@ -4,6 +4,14 @@ public class User {
     Integer id;
     String name;
 
+    public User(int i, String toString) {
+
+    }
+
+    public User() {
+
+    }
+
     public Integer getId() {
         return id;
     }
