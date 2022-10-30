@@ -7,9 +7,11 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="jvm-full-gc" />
+        <module name="concurrency" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="concurrency" target="8" />
       <module name="jvm-full-gc" target="1.8" />
     </bytecodeTargetLevel>
   </component>
