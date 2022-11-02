@@ -18,45 +18,45 @@ public class Test {
 
     /**
      * 思路: 因为num1的后位全是0, 所以我们可以从后往前添加, 对比num1和num2的末尾, 谁大放谁
-     * @param num1
+     * @param nums1
      * @param m
-     * @param num2
+     * @param nums2
      * @param n
      * @return
      */
-    public static int[] merge(int[] num1, int m, int[] num2, int n) {
+    public static int[] merge(int[] nums1, int m, int[] nums2, int n) {
         int k = m + n;
         int num1Index = m-1;
         int num2Index = n-1;
         for (int i = k - 1; i >= 0; i--) {
             if (num1Index < 0) {    //num1已经取完, 直接放num2
-                num1[i] = num2[num2Index--];
+                nums1[i] = nums2[num2Index--];
             } else if (num2Index < 0) {     //num2已经取完, 直接放num1
-                num1[i] = num1[num1Index--];
-            } else if (num1[num1Index] < num2[num2Index]) {
-                num1[i] = num2[num2Index--];
+                nums1[i] = nums1[num1Index--];
+            } else if (nums1[num1Index] < nums2[num2Index]) {
+                nums1[i] = nums2[num2Index--];
             } else {
-                num1[i] = num1[num1Index--];
+                nums1[i] = nums1[num1Index--];
             }
         }
-        return num1;
+        return nums1;
     }
 
-    public static int[] merge2(int[] num1, int m, int[] num2, int n) {
-        int k = m + n;
-        int num1Index = m - 1;
-        int num2Index = n - 1;
-        for (int i = k - 1; i >= 0; i--) {
-            if (num1Index < 0) {
-                num1[i] = num2[num2Index--];
-            } else if (num2Index < 0) {
-                num1[i] = num1[num1Index--];
-            } else if (num1[num1Index] < num2[num2Index]) {
-                num1[i] = num2[num2Index--];
+    public static int[] merge2(int[] nums1, int m, int[] nums2, int n) {
+        int nums1Index = m-1;
+        int nums2Index = n-1;
+
+        for (int numIndex = m + n - 1; numIndex >= 0; numIndex--) {
+            if (nums1Index < 0) {
+                nums1[numIndex] = nums2[nums2Index--];
+            } else if (nums2Index < 0) {
+                nums1[numIndex] = nums1[nums1Index--];
+            } else if (nums1[nums1Index] < nums2[nums2Index]) {
+                nums1[numIndex] = nums2[nums2Index--];
             } else {
-                num1[i] = num1[num1Index--];
+                nums1[numIndex] = nums1[nums1Index--];
             }
         }
-        return num1;
+        return nums1;
     }
 }
