@@ -17,7 +17,6 @@ public class WaitDemo {
                             e.printStackTrace();
                         }
                     }
-
                     System.out.println("wait end ....... ");
                 }
             }
