@@ -1,7 +1,8 @@
-package 两数之和;
+package 数组.两数之和;
 
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 给定一个数组nums和一个目标值target, 找出nums中两个相加等于target值得数的下标
@@ -27,6 +28,20 @@ public class Test {
                 res[1] = map.get(num);
                 res[0] = i;
                 return res;
+            } else {
+                map.put(nums[i], i);
+            }
+        }
+        return null;
+    }
+
+
+    public static int[] twoSum2(int[] nums, int target) {
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i = 0; i < nums.length; i++) {
+            int res = target - nums[i];
+            if (map.containsKey(res)) {
+                return new int[] {i, map.get(res)};
             } else {
                 map.put(nums[i], i);
             }

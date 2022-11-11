@@ -45,4 +45,23 @@ public class Test {
         return count;
     }
 
+    public ListNode FindKthToTail2(ListNode pHead, int k) {
+        int size = size(pHead);
+        if ((size - k) < 0) {
+            return null;
+        }
+        int index = size - k;
+        for (int i = 0; i <= index; i++) {
+            pHead = pHead.next;
+        }
+        return pHead;
+    }
+
+    private int size2(ListNode head) {
+        int size = 0;
+        while (head != null) {
+            size++;
+        }
+        return size;
+    }
 }

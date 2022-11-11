@@ -1,4 +1,4 @@
-package 爬楼梯;
+package 斐波那契.爬楼梯;
 
 import java.util.HashMap;
 
@@ -31,23 +31,5 @@ public class Test {
             storeMap.put(n, result);
             return result;
         }
-    }
-    public static int climbStairs2(int target) {
-        HashMap<Integer, Integer> map = new HashMap<>();
-        if (target == 1) {
-            return 1;
-        }
-        if (target == 2) {
-            return 2;
-        }
-        int result = 0;
-        int pre = 2;
-        int prePre = 1;
-        for (int i = 3; i <= target; ++i) {
-            result = pre + prePre;
-            prePre = pre;
-            pre = result;
-        }
-        return result;
     }
 }

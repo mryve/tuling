@@ -1,4 +1,4 @@
-package 合并两个有序数组;
+package 数组.合并两个有序数组;
 
 import java.util.Arrays;
 
@@ -13,7 +13,7 @@ public class Test {
         int[] num2 = new int[]{2,5,6};
         int m = 3;
         int n = 3;
-        System.out.println(Arrays.toString(merge2(num1, m, num2, n)));
+        System.out.println(Arrays.toString(merge(num1, m, num2, n)));
     }
 
     /**
@@ -37,24 +37,6 @@ public class Test {
                 nums1[i] = nums2[num2Index--];
             } else {
                 nums1[i] = nums1[num1Index--];
-            }
-        }
-        return nums1;
-    }
-
-    public static int[] merge2(int[] nums1, int m, int[] nums2, int n) {
-        int nums1Index = m-1;
-        int nums2Index = n-1;
-
-        for (int numIndex = m + n - 1; numIndex >= 0; numIndex--) {
-            if (nums1Index < 0) {
-                nums1[numIndex] = nums2[nums2Index--];
-            } else if (nums2Index < 0) {
-                nums1[numIndex] = nums1[nums1Index--];
-            } else if (nums1[nums1Index] < nums2[nums2Index]) {
-                nums1[numIndex] = nums2[nums2Index--];
-            } else {
-                nums1[numIndex] = nums1[nums1Index--];
             }
         }
         return nums1;

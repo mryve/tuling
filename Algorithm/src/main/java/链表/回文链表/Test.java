@@ -53,6 +53,38 @@ public class Test {
         return end;
     }
 
+    public boolean isPalindrome2(ListNode head) {
+        ListNode slow = head;
+        ListNode fast = head;
+        while (fast.next != null && fast.next.next != null) {
+            fast = fast.next.next;
+            slow = slow.next;
+        }
+        slow = slow.next;
+        fast = head;
+
+        while (slow != null) {
+            if (slow.val != fast.val) {
+                return false;
+            }
+            slow = slow.next;
+            fast = fast.next;
+        }
+        return true;
+
+    }
+
+    private ListNode reverse2(ListNode head) {
+        ListNode cur = null;
+        while (head != null) {
+            ListNode next = head.next;
+            head.next = cur;
+            cur = head;
+            head = next;
+        }
+        return cur;
+    }
+
 }
 
 class ListNode {

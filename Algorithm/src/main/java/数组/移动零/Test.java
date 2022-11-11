@@ -1,4 +1,4 @@
-package 移动零;
+package 数组.移动零;
 
 import java.util.Arrays;
 

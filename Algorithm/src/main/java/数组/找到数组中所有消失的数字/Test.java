@@ -1,4 +1,4 @@
-package 找到数组中所有消失的数字;
+package 数组.找到数组中所有消失的数字;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -31,5 +31,4 @@ public class Test {
         }
         return list;
     }
-
 }
