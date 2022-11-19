@@ -21,7 +21,7 @@ public class ReentrantLockDemo2 {
     public static void method1() {
         lock.lock();
         try {
-            log.debug("execute method1");
+            log.info("execute method1");
             method2();
         } finally {
             lock.unlock();
@@ -30,7 +30,7 @@ public class ReentrantLockDemo2 {
     public static void method2() {
         lock.lock();
         try {
-            log.debug("execute method2");
+            log.info("execute method2");
             method3();
         } finally {
             lock.unlock();
@@ -39,7 +39,7 @@ public class ReentrantLockDemo2 {
     public static void method3() {
         lock.lock();
         try {
-            log.debug("execute method3");
+            log.info("execute method3");
         } finally {
             lock.unlock();
         }

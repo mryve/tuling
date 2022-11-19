@@ -26,11 +26,11 @@ public class ReentrantLockDemo4 {
 
             //超时
             try {
-                if (!lock.tryLock(1, TimeUnit.SECONDS)) {
+                if (!lock.tryLock()) {
                     log.info("等待 1s 后获取锁失败，返回");
                     return;
                 }
-            } catch (InterruptedException e) {
+            } catch (Exception e) {
                 e.printStackTrace();
                 return;
             }

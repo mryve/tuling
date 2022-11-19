@@ -40,8 +40,8 @@ public class ReentrantLockDemo3 {
             //先让线程t1执行
             Thread.sleep(1000);
 
-            t1.interrupt();
-            log.info("线程t1执行中断");
+            //t1.interrupt();
+            //log.info("线程t1执行中断");
         } finally {
             lock.unlock();
         }

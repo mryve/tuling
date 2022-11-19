@@ -25,14 +25,14 @@ public class ReentrantLockDemo6 {
         try {
             while(!hashcig){
                 try {
-                    log.debug("没有烟，歇一会");
+                    log.info("没有烟，歇一会");
                     cigCon.await();
 
                 }catch (Exception e){
                     e.printStackTrace();
                 }
             }
-            log.debug("有烟了，干活");
+            log.info("有烟了，干活");
         }finally {
             lock.unlock();
         }
@@ -44,14 +44,14 @@ public class ReentrantLockDemo6 {
         try {
             while(!hastakeout){
                 try {
-                    log.debug("没有饭，歇一会");
+                    log.info("没有饭，歇一会");
                     takeCon.await();
 
                 }catch (Exception e){
                     e.printStackTrace();
                 }
             }
-            log.debug("有饭了，干活");
+            log.info("有饭了，干活");
         }finally {
             lock.unlock();
         }
@@ -71,7 +71,7 @@ public class ReentrantLockDemo6 {
             lock.lock();
             try {
                 hashcig = true;
-                log.debug("唤醒送烟的等待线程");
+                log.info("唤醒送烟的等待线程");
                 cigCon.signal();
             }finally {
                 lock.unlock();
@@ -84,7 +84,7 @@ public class ReentrantLockDemo6 {
             lock.lock();
             try {
                 hastakeout = true;
-                log.debug("唤醒送饭的等待线程");
+                log.info("唤醒送饭的等待线程");
                 takeCon.signal();
             }finally {
                 lock.unlock();

@@ -13,14 +13,15 @@ import java.util.concurrent.locks.ReentrantLock;
  */
 public class ReentrantLockDemo {
 
-    private static  int sum = 0;
+    private static int sum = 0;
+    private static int sum2 = 0;
     private static Lock lock = new ReentrantLock();
     //private static TulingLock lock = new TulingLock();
 
     public static void main(String[] args) throws InterruptedException {
 
         for (int i = 0; i < 3; i++) {
-            Thread thread = new Thread(()->{
+            Thread thread = new Thread(() -> {
                 //加锁
                 lock.lock();
                 try {
@@ -37,7 +38,26 @@ public class ReentrantLockDemo {
             thread.start();
         }
 
+
+        for (int i = 0; i < 3; i++) {
+
+            Thread thread = new Thread(() -> {
+
+                    // 临界区代码
+                    // TODO 业务逻辑：读写操作不能保证线程安全
+                    for (int j = 0; j < 10000; j++) {
+                        synchronized (lock) {
+                            sum2++;
+                        }
+                    }
+
+            });
+            thread.start();
+        }
+
+
         Thread.sleep(2000);
         System.out.println(sum);
+        System.out.println(sum2);
     }
 }
