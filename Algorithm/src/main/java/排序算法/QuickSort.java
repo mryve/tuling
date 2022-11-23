@@ -2,7 +2,7 @@ package 排序算法;
 
 public class QuickSort {
     public static void quickSort(int[] arr, int start, int end) {
-        if (start < end) {
+        if (start >= end) {
             return;
         }
         int left = start;

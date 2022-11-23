@@ -7,7 +7,8 @@ public class BubbleSort {
 
     public static void main(String[] args) {
         int[] arr = {8,9,1,7,2,3,5,4,6,0,0};
-        SelectSort.selectSort2(arr);
+        //SelectSort.selectSort(arr);
+        QuickSort.quickSort(arr, 0, arr.length-1);
         //InsertSort.insertSort(arr);
         System.out.println(Arrays.toString(arr));
     }
