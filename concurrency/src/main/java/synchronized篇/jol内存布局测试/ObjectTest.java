@@ -11,10 +11,10 @@ public class ObjectTest {
 
     public static void main(String[] args) throws InterruptedException {
         //jvm延迟偏向
-        //Thread.sleep(5000);
+        Thread.sleep(5000);
         Object obj = new Test();
         //Object obj = new Integer[4];
-        //obj.hashCode();
+        obj.hashCode();
         //查看对象内部信息
         System.out.println(ClassLayout.parseInstance(obj).toPrintable());
 
