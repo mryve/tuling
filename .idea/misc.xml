@@ -5,6 +5,7 @@
       <list>
         <option value="$PROJECT_DIR$/../project/jvm-full-gc/pom.xml" />
         <option value="$PROJECT_DIR$/concurrency/pom.xml" />
+        <option value="$PROJECT_DIR$/spring/mySpring/pom.xml" />
       </list>
     </option>
   </component>
