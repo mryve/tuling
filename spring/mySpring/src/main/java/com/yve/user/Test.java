@@ -10,11 +10,9 @@ import com.yve.user.service.UserService;
 public class Test {
     public static void main(String[] args) {
         MyApplicationContext context = new MyApplicationContext(AppConfig.class);
-//        System.out.println(context.getBean("userService"));
-//        System.out.println(context.getBean("userService"));
-//        System.out.println(context.getBean("userService"));
-        UserService userService = (UserService) context.getBean("com.yve.user.service.UserService");
-        //userService.test();
+
+        UserService userService = (UserService) context.getBean("userService");
+        userService.test();
     }
 
 }
